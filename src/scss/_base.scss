@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+
+html, body {
+    overflow: overlay;
+    overflow-x: hidden;
+    width: 100%;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+pre {
+    font-family: 'Roboto', sans-serif !important;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.flex {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input[type="submit"], input[type="reset"] {
+    padding: 0;
+    font: inherit;
+	cursor: pointer;
+    color: inherit;
+	border: none;
+    background: none;
+	outline: inherit;
+}
+
+
+@mixin font($font-weight: 300, $font-size: 1em, $line-height: 1.33) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+
+@mixin bg($bg-image, $bg-size: cover, $bg-position: center top, $bg-repeat: no-repeat) {
+    -webkit-background-size: $bg-size;
+    -moz-background-size: $bg-size;
+    -o-background-size: $bg-size;
+    background-size: $bg-size;
+
+    -webkit-background-position: $bg-position;
+    -moz-background-position: $bg-position;
+    -o-background-position: $bg-position;
+    background-position: $bg-position;
+
+    -webkit-background-image: $bg-image;
+    -moz-background-image: $bg-image;
+    -o-background-image: $bg-image;
+    background-image: $bg-image;
+
+    -webkit-background-repeat: $bg-repeat;
+    -moz-background-repeat: $bg-repeat;
+    -o-background-repeat: $bg-repeat;
+    background-repeat: $bg-repeat;
+}
+
+// Colors
+$color_accent: linear-gradient(272.73deg, #CD356C 0%, #DE3838 100%);
+$color_theme: #28ACB5;
+$color_darker-theme: #11888F;
+$color_main-background: #322747;
+$color_footer-background: #1C132F;
+$color_secondary: #D7D7D7;
+
+
+$nav_transition_duration: 0.4s;
+
+#root {
+    background-color: $color_main-background;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+// Buttons
+.white-button {
+    background-color: #fff;
+    &:not(.inactive-button):hover {
+        background-color: rgb(224, 224, 224);
+    }
+
+    &> span {
+        position: relative;
+        top: 2px;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.free-text {
+    * {
+        @include font($line-height: 1.5);
+        color: #fff;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            &:before {
+                content: " ";
+                width: 0.625rem;
+                height: 0.625rem;
+                background-color: $color_theme;
+                border-radius: 1000px;
+                display: inline-block;
+                margin-right: 0.625rem;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+    ol {
+        counter-reset: item;
+        padding-left: 0;
+        li {
+            display: block;
+            &:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                color: $color_theme;
+            }
+        }
+    }
+    a {
+        color: $color_theme;
+        text-decoration: underline;
+        &:not(.inactive-button):hover {
+            color: rgba($color_theme, 0.65);
+            text-decoration: none;
+        }
+    }
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+.inactive-button {
+    &> * {
+        opacity: 0.6 !important;
+        cursor: default;
+    }
+    cursor: default !important;
+    position: relative;
+    &:hover > .inactive-button--tooltip {
+        left: 0;
+        opacity: 1 !important;
+        transition: opacity 0.3s 0s, left 0s 0s;
+    }
+    &--tooltip {
+        cursor: default !important;
+        opacity: 0 !important;
+        position: absolute;
+        top: 0;
+        left: -1000000px;
+        transition: opacity 0.3s 0s, left 0s 0.3s;
+        transform: translate(calc(-100% - 10px), 0%);
+        @include font($font-size: 10px);
+        color: #000;
+        background-color: #fff;
+        white-space: nowrap;
+        -webkit-box-shadow: -3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: -3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: -3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        padding: 3px 6px;
+    }
+}
+
+
+.loader-animation {
+    background: linear-gradient(270deg, #25f0ff, #f1f52c, #e83030);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 5px;
+    
+    
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+}

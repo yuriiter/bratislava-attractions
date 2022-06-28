@@ -1,0 +1,75 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lcb3fn');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lcb3fn#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?lcb3fn') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?lcb3fn') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?lcb3fn##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-full_heart {
+  &:before {
+    content: $icon-full_heart; 
+  }
+}
+.icon-emptystar {
+  &:before {
+    content: $icon-emptystar; 
+  }
+}
+.icon-arrow {
+  &:before {
+    content: $icon-arrow; 
+  }
+}
+.icon-fb {
+  &:before {
+    content: $icon-fb; 
+  }
+}
+.icon-half_star {
+  &:before {
+    content: $icon-half_star; 
+  }
+}
+.icon-full_star {
+  &:before {
+    content: $icon-full_star; 
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart; 
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube; 
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram; 
+  }
+}
+

@@ -1,0 +1,115 @@
+.header {
+    &__cta {
+        @media (max-width: 575px) {
+            margin-top: 150px;
+            margin-bottom: 100px;
+            &-button {
+                width: 100% !important;
+            }
+        }
+        margin: 200px auto 148px auto;
+        text-align: center;
+        &> h1 {
+            @include font($font-size: 34px, $font-weight: 900, $line-height: 1.28);
+            color: #fff;
+            margin: 0 auto 18px auto;
+        }
+        &> p {
+            color: $color_secondary;
+            max-width: 430px;
+            margin: 18px auto 28px auto;
+        }
+        &-button {
+            background: $color_accent;
+            color: #fff;
+            width: fit-content;
+            padding: 14px 50px;
+            margin: 28px auto 0 auto;
+            background-size: 150% 150%;
+            background-position: 0% 50%;
+            &:not(.inactive-button):hover {
+                background-position: 100% 100%;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.fixed-icons-nav {
+    transition: all $nav_transition_duration, color 1ms, background-color 1ms;
+    cursor: pointer;
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    padding: 28px 4px;
+    background-color: rgba(#fff, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 0 20px 20px 0;
+    transform: translate(0, -50%);
+
+    .inactive-button--tooltip {
+        @media (max-width: 1199px) {
+            transform: translate(50px, 7px);
+        }
+        @media (max-width: 575px) {
+            transform: translate(-30%, -30px);
+        }
+    }
+    &--hidden {
+        .inactive-button--tooltip {
+            @media (max-width: 1199px) {
+                transform: translate(-30000px, -300000px);
+            }
+            @media (max-width: 575px) {
+                transform: translate(-30000px, -300000px);
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        border-radius: 20px 20px 0 0;
+        justify-content: center;
+        bottom: 0;
+        top: unset;
+        transform: translate(-50%, 0);
+        left: 50%;
+        padding: 13px 18px;
+    }
+
+    @media (max-width: 440px) {
+        width: 70%;
+    }
+
+    @media (max-width: 370px) {
+        width: 80%;
+    }
+
+    &--hidden {
+        @media (max-width: 1199px) {
+            transform: translate(-100%, -50%);
+        }
+        @media (max-width: 575px) {
+            transform: translate(-50%, 100%);
+        }
+    }
+    &> ul {
+        @media (max-width: 575px) {
+            flex-direction: row;
+            column-gap: 0;
+            width: 100%;
+        }
+
+        flex-direction: column;
+        row-gap: 20px;
+        &>li {
+            margin: 0 auto;
+            &> a {
+                padding: 10px;
+                color: #fff;
+            }
+        }
+    }
+}

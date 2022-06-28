@@ -1,0 +1,19 @@
+// Variables, reset styles, mixins
+@import "scss/base";
+
+// Icon font
+@import "fonts/icons/style";
+
+// Components
+@import "scss/components/button";
+@import "scss/components/filter";
+@import "scss/components/main_slider";
+@import "scss/components/nav_bar";
+@import "scss/components/dashboard";
+@import "scss/components/error_page";
+
+// Containers
+@import "scss/containers/article";
+@import "scss/containers/catalog";
+@import "scss/containers/footer";
+@import "scss/containers/header";

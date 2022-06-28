@@ -1,0 +1,9 @@
+.error-page {
+    padding: 120px 0 80px 0;
+    &__title {
+        @include font($font-weight: 900, $font-size: 30px);
+        color: #fff;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}

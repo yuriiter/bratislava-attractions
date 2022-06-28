@@ -1,0 +1,16 @@
+footer {
+    padding-top: 26px;
+    padding-bottom: 7px;
+    background-color: $color_footer-background;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    p {
+        text-align: center;
+        @include font($line-height: 1.5);
+        color: #fff;
+        span {
+            color: $color_theme;
+        }
+    }
+}
